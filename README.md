@@ -173,6 +173,8 @@ def xsum(numbers):
 > ### See also:
 > You can find the full source code for the Django example project at: [https://github.com/celery/celery/tree/master/examples/django/]()
 
+
+
 > ### Relative Imports
 > You have to be consistent in how you import the task module. For example, if you have `project.app` in `INSTALLED_APPS`,
 then you must also import the tasks `from project.app` or else the names of the tasks will end up being different.
