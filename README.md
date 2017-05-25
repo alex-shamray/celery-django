@@ -3,7 +3,7 @@
 ## Using Celery with Django
 
 ---
-### Note:
+**Note:**
 
 Previous versions of Celery required a separate library to work with Django, but since 3.1 this is no longer the case.
 Django is supported out of the box now so this document only contains a basic way to integrate Celery and Django. You'll
@@ -12,9 +12,10 @@ tutorial first and come back to this tutorial. When you have a working example y
 ---
 
 ---
-### Note:
+**Note:**
 
 Celery 4.0 supports Django 1.8 and newer versions. Please use Celery 3.1 for versions older than Django 1.8.
+
 ---
 
 To use Celery with your Django project you must first define an instance of the Celery library (called an "app")
