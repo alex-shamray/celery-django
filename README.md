@@ -15,7 +15,6 @@ tutorial first and come back to this tutorial. When you have a working example y
 **Note:**
 
 Celery 4.0 supports Django 1.8 and newer versions. Please use Celery 3.1 for versions older than Django 1.8.
-
 ---
 
 To use Celery with your Django project you must first define an instance of the Celery library (called an "app")
