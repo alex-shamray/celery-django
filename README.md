@@ -34,7 +34,7 @@ If you have a modern Django project layout like::
 
 then the recommended way is to create a new `proj/proj/celery.py` module that defines the Celery instance:
 
-`proj/proj/celery.py`
+`proj/proj/celery.py`:
 
 ```python
 from __future__ import absolute_import, unicode_literals
@@ -77,7 +77,8 @@ __all__ = ['celery_app']
 ```
 
 Note that this example project layout is suitable for larger projects, for simple projects you may use a single contained
-module that defines both the app and tasks, like in the :ref:`tut-celery` tutorial.
+module that defines both the app and tasks, like in the [First Steps with Celery](http://docs.celeryproject.org/en/latest/getting-started/first-steps-with-celery.html#tut-celery)
+tutorial.
 
 Let's break down what happens in the first module, first we import absolute imports from the future, so that our
 `celery.py` module won't clash with the library:
@@ -87,15 +88,14 @@ from __future__ import absolute_import
 ```
 
 Then we set the default [`DJANGO_SETTINGS_MODULE`](http://django.readthedocs.io/en/latest/topics/settings.html#envvar-DJANGO_SETTINGS_MODULE)
-environment variable for the :program:`celery` command-line program:
+environment variable for the `celery` command-line program:
 
 ```python
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'proj.settings')
 ```
 
-You don't need this line, but it saves you from always passing in the
-settings module to the ``celery`` program. It must always come before
-creating the app instances, as is what we do next:
+You don't need this line, but it saves you from always passing in the settings module to the `celery` program. It must
+always come before creating the app instances, as is what we do next:
 
 ```python
 app = Celery('proj')
@@ -124,8 +124,8 @@ a way to auto-discover these modules:
 app.autodiscover_tasks()
 ```
 
-With the line above Celery will automatically discover tasks from all
-of your installed apps, following the ``tasks.py`` convention::
+With the line above Celery will automatically discover tasks from all of your installed apps, following the `tasks.py`
+convention::
 
 ```
 - app1/
@@ -142,7 +142,7 @@ setting.
 Finally, the `debug_task` example is a task that dumps its own request information. This is using the new `bind=True`
 task option introduced in Celery 3.1 to easily refer to the current task instance.
 
-### Using the ``@shared_task`` decorator
+### Using the `@shared_task` decorator
 
 The tasks you write will probably live in reusable apps, and reusable apps cannot depend on the project itself, so you
 also cannot import your app instance directly.
@@ -175,12 +175,13 @@ def xsum(numbers):
 ---
 **See also:**
 
-You can find the full source code for the Django example project at: [https://github.com/celery/celery/tree/master/examples/django/]()
+You can find the full source code for the Django example project at:
+[https://github.com/celery/celery/tree/master/examples/django/](https://github.com/celery/celery/tree/master/examples/django/)
 
 ---
 
 ---
-**Relative Imports**
+**Relative Imports:**
 
 You have to be consistent in how you import the task module. For example, if you have `project.app` in `INSTALLED_APPS`,
 then you must also import the tasks `from project.app` or else the names of the tasks will end up being different.
